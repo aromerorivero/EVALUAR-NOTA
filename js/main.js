@@ -31,7 +31,7 @@ function NewAlumn() {
       let surname = document.getElementById("surname").value;
       let points = document.getElementById("points").value;
 
-      if (name === "" || surname === "" || points < 0 || points > 10) {
+      if (name === "" || surname === "" || points < 0 || points > 10 || points === isNaN || points === "") {
         reject("datos no validos");
       }
       else {
@@ -50,10 +50,9 @@ async function showUserResult() {
   try {
     let alumns1 = await NewAlumn();
     console.log(alumns1);
-  } catch (error){
+  } catch (error) {
     console.error(error);
   }
 }
 
 
- 
